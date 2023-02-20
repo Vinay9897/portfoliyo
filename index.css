@@ -17,6 +17,7 @@ header {
     height: 10vh;
     width: 100%;
     background-color: rgb(218, 40, 40);
+    position: fixed;
 }
 
 a {
@@ -82,8 +83,13 @@ ul li a {
     background-color: rgba(66, 66, 245, 0.877);
 }
 
-.proj h1,
-h2 {
+hr {
+    width: 44%;
+    margin: auto;
+    text-align: center;
+}
+
+.proj h1 {
     padding-top: 2rem;
     text-align: center;
     font-size: 4rem;
@@ -147,6 +153,27 @@ h2 {
 }
 
 .media ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.red {
+    width: 100%;
+    border: .2rem solid red;
+}
+
+::after .red {
+    margin: 2rem;
+}
+
+footer {
+    color: white;
+    font-size: 2rem;
+    padding: 5rem 0rem;
+    width: 100%;
+    height: 5%;
+    background-color: rgb(73, 59, 59);
     display: flex;
     justify-content: space-around;
     align-items: center;
