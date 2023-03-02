@@ -96,6 +96,7 @@ hr {
 }
 
 .projects {
+    width: 100%;
     margin-top: 1rem;
     flex-wrap: wrap;
     display: flex;
@@ -107,7 +108,23 @@ hr {
 .project {
     padding: 2rem;
     width: 30%;
-    height: 10%;
+    height: 100%;
+    border: 2px solid black;
+}
+
+.project h2 {
+    width: 100%;
+    height: 20%;
+    text-align: center;
+
+}
+
+.project h2::before {
+    content: "<";
+}
+
+.project h2::after {
+    content: " />";
 }
 
 .project img {
