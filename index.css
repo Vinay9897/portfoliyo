@@ -136,28 +136,16 @@ hr {
 .contact {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: rgb(73, 59, 59);
 }
 
-.text {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    color: white;
+#skills {
+    width: 50%;
+    height: 100%;
+    border: 2px solid black;
 }
 
-.text h1 {
-    padding: 5rem 0rem 1rem 0rem;
-    font-size: 4rem;
-}
-
-.text p {
-
-    font-size: 2rem;
-}
 
 .media {
     width: 60%;
