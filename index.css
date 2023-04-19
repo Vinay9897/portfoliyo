@@ -270,11 +270,20 @@ hr {
     text-align: center;
 }
 
+.media p {
+    background-color: brown;
+    color: yellow;
+}
+
 .media ul {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.media ul li {
+    padding: .5rem;
 }
 
 .red {
