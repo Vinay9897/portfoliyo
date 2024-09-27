@@ -1,6 +1,7 @@
+/* Global Styles */
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -8,12 +9,20 @@ html {
     font-family: sans-serif;
 }
 
+body {
+    overflow-x: hidden;
+}
+
+/* Main Layout */
 main {
+    border-style: solid;
     width: 100vw;
     height: 100vh;
 }
 
 header {
+    margin-top: 0;
+    padding-top: 0;
     height: 10vh;
     width: 100%;
     background-color: rgb(218, 40, 40);
@@ -35,18 +44,26 @@ nav ul {
 
 li {
     list-style: none;
-
 }
 
 ul li a {
     padding: 2rem;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
+ul li a:hover {
+    color: rgb(255, 200, 200);
+}
+
+/* About Section */
 .info {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     height: 70vh;
+    margin-top: 10vh;
+    /* Offset for fixed header */
 }
 
 .box {
@@ -58,10 +75,11 @@ ul li a {
 .left {
     display: flex;
     flex-direction: column;
-    text-align: center;
     justify-content: center;
-    font-size: 3rem;
     align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    padding: 2rem;
 }
 
 .right {
@@ -71,14 +89,14 @@ ul li a {
 }
 
 .right img {
-    width: 38%;
-    height: 50%;
+    width: 50%;
+    height: auto;
     object-fit: cover;
-
     border-radius: 50%;
     border: 2px solid;
 }
 
+/* Projects Section */
 .proj {
     width: 100%;
     background-color: rgba(66, 66, 245, 0.877);
@@ -87,35 +105,27 @@ ul li a {
 hr {
     width: 44%;
     margin: auto;
-    text-align: center;
 }
 
 .proj h1 {
     padding-top: 2rem;
     text-align: center;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .projects {
-    width: 100%;
-    margin-top: 1rem;
-    flex-wrap: wrap;
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     justify-content: space-around;
+    padding: 2rem 0;
 }
 
 .project {
     padding: 2rem;
     width: 30%;
-    height: 100%;
-}
-
-.project h2 {
-    width: 100%;
-    height: 20%;
+    height: auto;
     text-align: center;
-
 }
 
 .project h2::before {
@@ -128,185 +138,188 @@ hr {
 
 .project img {
     width: 100%;
-    height: 80%;
+    height: auto;
     object-fit: cover;
     border: 2px solid green;
+    transition: transform 0.3s ease;
 }
 
+.project img:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
 .contact {
-    width: 100%;
-    height: 85%;
     display: flex;
-    flex-direction: row;
-    background-color: rgb(73, 59, 59);
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+    color: white;
 }
 
 .wheel {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact .wheel h1 {
-    margin-top: 109px;
-    margin-left: 100px;
-}
-
-#skills {
-    border: 2px solid black;
-    border-radius: 50%;
-    margin-top: 100px;
-    margin-left: 100px;
-    position: absolute;
-    height: 55vw;
-    width: 55vw;
-    max-width: 500px;
-    max-height: 500px;
-    animation: wheel 10s infinite linear;
-}
-
-.line {
-    width: 50%;
-    background-color: black;
-    height: 2px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform-origin: 50% 0%;
-}
-
-.line:nth-of-type(2) {
-    transform: rotate(60deg);
-    top: 71.5%;
-    left: 37.5%;
-}
-
-.line:nth-of-type(3) {
-    transform: rotate(120deg);
-    top: 71.5%;
-    left: 13%;
-}
-
-.line:nth-of-type(4) {
-    transform: rotate(180deg);
-    left: 0%;
-}
-
-.line:nth-of-type(5) {
-    transform: rotate(240deg);
-    left: 12.9%;
-    top: 28%;
-}
-
-.line:nth-of-type(6) {
-    transform: rotate(300deg);
-    left: 37.6%;
-    top: 28.5%;
-}
-
-.cabins {
-    width: 100px;
-    height: 100px;
-    border: 2px solid black;
-    position: absolute;
-    top: 5%;
-    left: 25%;
-    background-color: yellow;
-    transform-origin: 50% 0%;
-    animation: cabin 10s ease-in-out infinite;
-
-}
-
-.cabins {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cabins:nth-of-type(1) {
-    top: 5%;
-    left: 14%;
-}
-
-.cabins:nth-of-type(2) {
-    top: 5%;
-    left: 65%;
-}
-
-.cabins:nth-of-type(3) {
-    top: 49%;
-    left: -10%;
-}
-
-.cabins:nth-of-type(4) {
-    top: 50%;
-    left: 90%;
-}
-
-.cabins:nth-of-type(5) {
-    top: 88%;
-    left: 61%;
-}
-
-.cabins:nth-of-type(6) {
-    top: 91%;
-    left: 17%;
-}
-
-.media {
-    width: 50%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
 
-    color: white;
-    font-size: 2rem;
-    padding: 2rem;
+h1 {
     margin-bottom: 2rem;
+    font-size: 3rem;
+}
+
+#skills {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    animation: spin 10s infinite linear;
+    /* Rotating wheel */
+}
+
+.line {
+    position: absolute;
+    width: 2px;
+    height: 50%;
+    background-color: white;
+    top: 0;
+    left: 50%;
+    transform-origin: 50% 100%;
+}
+
+/* Positioning lines in hexagonal pattern */
+.line:nth-of-type(1) {
+    transform: rotate(0deg);
+}
+
+.line:nth-of-type(2) {
+    transform: rotate(60deg);
+}
+
+.line:nth-of-type(3) {
+    transform: rotate(120deg);
+}
+
+.line:nth-of-type(4) {
+    transform: rotate(180deg);
+}
+
+.line:nth-of-type(5) {
+    transform: rotate(240deg);
+}
+
+.line:nth-of-type(6) {
+    transform: rotate(300deg);
+}
+
+.cabins {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 90%;
+    border: 2px solid #000;
+    transform-origin: 50% 50%;
+    animation: spinReverse 10s infinite linear;
+    /* Rotating cabins in opposite direction */
+}
+
+/* Positioning cabins (skills) at the end of each line */
+.cabins:nth-of-type(1) {
+    top: -8%;
+    left: 45%;
+    transform: translate(-50%, -100%);
+}
+
+.cabins:nth-of-type(2) {
+    top: 7%;
+    left: 85%;
+    transform: translate(0%, 90%);
+}
+
+.cabins:nth-of-type(3) {
+    top: 50%;
+    left: 86%;
+    transform: translate(-50%, -50%);
+}
+
+.cabins:nth-of-type(4) {
+    top: 88%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+}
+
+.cabins:nth-of-type(5) {
+    top: 65%;
+    left: 05%;
+    transform: translate(-50%, -50%);
+}
+
+
+.cabins:nth-of-type(6) {
+    top: 20%;
+    left: 0;
+    transform: translate(-50%, 50%);
+}
+
+.cabins h2 {
+    font-size: 1.5rem;
     text-align: center;
+}
+
+/* Media Section */
+.media {
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
 .media p {
     background-color: brown;
     color: yellow;
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 .media ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    list-style: none;
 }
 
 .media ul li {
     padding: .5rem;
 }
 
-.red {
-    width: 100%;
-    border: .2rem solid red;
+.media ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-::after .red {
-    margin: 2rem;
+.media ul li a:hover {
+    color: yellow;
 }
 
+/* Footer */
 footer {
     color: white;
-    font-size: 2rem;
-    padding: 5rem 0rem;
+    font-size: 1.5rem;
+    padding: 2rem 0;
     width: 100%;
-    height: 5%;
     background-color: rgb(73, 59, 59);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    text-align: center;
 }
 
+/* Keyframes for animations */
 @keyframes wheel {
     0% {
         transform: rotate(0deg);
@@ -315,15 +328,57 @@ footer {
     100% {
         transform: rotate(360deg);
     }
-
 }
 
-@keyframes cabin {
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    .info,
+    .contact,
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box,
+    .proj,
+    .wheel,
+    .media {
+        width: 100%;
+    }
+
+    .project {
+        width: 90%;
+    }
+
+    header nav ul {
+
+        border-style: solid;
+        font-size: 1.5rem;
+    }
+
+    .proj h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@keyframes spin {
     0% {
         transform: rotate(0deg);
     }
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+/* Animation to spin the cabins in reverse (to keep them upright) */
+@keyframes spinReverse {
+    0% {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    100% {
+        transform: rotate(-360deg) translateY(0);
     }
 }
