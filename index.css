@@ -7,27 +7,20 @@
 
 html {
     font-family: sans-serif;
+    background-color: rgb(73, 59, 59);
 }
 
-body {
-    overflow-x: hidden;
-}
-
-/* Main Layout */
 main {
-    border-style: solid;
     width: 100vw;
     height: 100vh;
 }
 
 header {
-    margin-top: 0;
-    padding-top: 0;
     height: 10vh;
     width: 100%;
     background-color: rgb(218, 40, 40);
-    position: fixed;
-    z-index: 2;
+    /* position: fixed; */
+    /* z-index: 1; */
 }
 
 a {
@@ -42,7 +35,7 @@ nav ul {
     padding-top: 1.5rem;
 }
 
-li {
+ul li {
     list-style: none;
 }
 
@@ -63,36 +56,31 @@ ul li a:hover {
     width: 100%;
     height: 70vh;
     margin-top: 10vh;
-    /* Offset for fixed header */
 }
 
 .box {
     width: 50%;
     background-color: rgb(73, 59, 59);
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+
 }
 
 .left {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 3rem;
-    padding: 2rem;
 }
 
-.right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.right {}
 
 .right img {
+    height: 90%;
     width: 50%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 50%;
+    border-radius: 10%;
     border: 2px solid;
 }
 
@@ -124,7 +112,6 @@ hr {
 .project {
     padding: 2rem;
     width: 30%;
-    height: auto;
     text-align: center;
 }
 
@@ -138,7 +125,6 @@ hr {
 
 .project img {
     width: 100%;
-    height: auto;
     object-fit: cover;
     border: 2px solid green;
     transition: transform 0.3s ease;
@@ -159,25 +145,35 @@ hr {
 }
 
 .wheel {
+    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    animation: rotateWheel 10s linear infinite;
 }
 
-h1 {
-    margin-bottom: 2rem;
-    font-size: 3rem;
+.skillheader {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    top: 130px;
+    left: 125px;
+    font-size: 1.5rem;
 }
+
+
 
 #skills {
-    position: relative;
+    /* position: relative; */
     width: 300px;
     height: 300px;
     border: 2px solid #fff;
     border-radius: 50%;
     animation: spin 10s infinite linear;
-    /* Rotating wheel */
 }
 
 .line {
@@ -190,7 +186,7 @@ h1 {
     transform-origin: 50% 100%;
 }
 
-/* Positioning lines in hexagonal pattern */
+/* Positioning lines */
 .line:nth-of-type(1) {
     transform: rotate(0deg);
 }
@@ -223,54 +219,41 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: .5rem;
     border-radius: 90%;
     border: 2px solid #000;
     transform-origin: 50% 50%;
     animation: spinReverse 10s infinite linear;
-    /* Rotating cabins in opposite direction */
 }
 
-/* Positioning cabins (skills) at the end of each line */
 .cabins:nth-of-type(1) {
     top: -8%;
     left: 45%;
-    transform: translate(-50%, -100%);
 }
 
 .cabins:nth-of-type(2) {
     top: 7%;
     left: 85%;
-    transform: translate(0%, 90%);
 }
 
 .cabins:nth-of-type(3) {
     top: 50%;
     left: 86%;
-    transform: translate(-50%, -50%);
 }
 
 .cabins:nth-of-type(4) {
     top: 88%;
     left: 47%;
-    transform: translate(-50%, -50%);
 }
 
 .cabins:nth-of-type(5) {
     top: 65%;
     left: 05%;
-    transform: translate(-50%, -50%);
 }
-
 
 .cabins:nth-of-type(6) {
     top: 20%;
     left: 0;
-    transform: translate(-50%, 50%);
-}
-
-.cabins h2 {
-    font-size: 1.5rem;
-    text-align: center;
 }
 
 /* Media Section */
@@ -279,7 +262,6 @@ h1 {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     color: white;
 }
@@ -296,13 +278,15 @@ h1 {
 }
 
 .media ul li {
-    padding: .5rem;
+    text-align: center;
+    padding: 1rem;
 }
 
 .media ul li a {
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
+
 }
 
 .media ul li a:hover {
@@ -319,14 +303,24 @@ footer {
     text-align: center;
 }
 
-/* Keyframes for animations */
-@keyframes wheel {
+/* Keyframes */
+@keyframes spin {
     0% {
         transform: rotate(0deg);
     }
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes spinReverse {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
     }
 }
 
@@ -342,7 +336,6 @@ footer {
 
     .box,
     .proj,
-    .wheel,
     .media {
         width: 100%;
     }
@@ -352,33 +345,10 @@ footer {
     }
 
     header nav ul {
-
-        border-style: solid;
         font-size: 1.5rem;
     }
 
     .proj h1 {
         font-size: 2.5rem;
-    }
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* Animation to spin the cabins in reverse (to keep them upright) */
-@keyframes spinReverse {
-    0% {
-        transform: rotate(0deg) translateY(0);
-    }
-
-    100% {
-        transform: rotate(-360deg) translateY(0);
     }
 }
