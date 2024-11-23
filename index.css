@@ -19,8 +19,6 @@ header {
     height: 10vh;
     width: 100%;
     background-color: rgb(218, 40, 40);
-    /* position: fixed; */
-    /* z-index: 1; */
 }
 
 a {
@@ -40,7 +38,7 @@ ul li {
 }
 
 ul li a {
-    padding: 2rem;
+    padding: 0rem 2rem;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -70,6 +68,15 @@ ul li a:hover {
 
 }
 
+#role {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline;
+    border-right: 2px solid;
+    /* Cursor effect */
+    animation: blink 0.7s infinite step-end;
+}
+
 .left {
     display: flex;
     flex-direction: column;
@@ -78,7 +85,7 @@ ul li a:hover {
 .right {}
 
 .right img {
-    height: 90%;
+    height: auto;
     width: 50%;
     border-radius: 10%;
     border: 2px solid;
@@ -134,7 +141,108 @@ hr {
     transform: scale(1.05);
 }
 
+/* certificate section  */
+.certificates {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.certificates h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.year-section {
+    margin-bottom: 40px;
+}
+
+.year-section h2 {
+    font-size: 24px;
+    color: #555;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Row for certificates */
+.certificates-row {
+    display: flex;
+    /* Continuous scrolling */
+    gap: 20px;
+    overflow: hidden;
+    /* Hide overflow to enable clean scrolling */
+    position: relative;
+}
+
+.certificates-row .certificate-block {
+    min-width: 200px;
+    flex-shrink: 0;
+    /* Prevent shrinking of elements */
+    text-align: center;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.certificates-row .certificate-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.certificates-row .certificate-block img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+}
+
+.certificates-row .certificate-block h3 {
+    font-size: 16px;
+    margin: 0;
+    color: #333;
+}
+
+/* Scrolling Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(10%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.certificates-row {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    position: relative;
+    animation: scroll 15s linear infinite;
+    /* Infinite scrolling animation */
+}
+
+/* Duplicate row to create seamless scrolling effect */
+.certificates-row::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+}
+
+
 /* Contact Section */
+
 .contact {
     display: flex;
     justify-content: space-around;
@@ -279,14 +387,15 @@ hr {
 
 .media ul li {
     text-align: center;
-    padding: 1rem;
+    margin: 1rem;
 }
 
 .media ul li a {
+    padding: 0rem;
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
-
+    /* border: 2px solid; */
 }
 
 .media ul li a:hover {
@@ -301,6 +410,12 @@ footer {
     width: 100%;
     background-color: rgb(73, 59, 59);
     text-align: center;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
 }
 
 /* Keyframes */
